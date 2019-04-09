@@ -1,0 +1,22 @@
+{
+  "name": "rout2csv",
+  "version": "1.0.0",
+  "description": "Scan runner.out files extract errors into a CSV file.",
+  "main": "index.js",
+  "bin": "./index.js",
+    "pkg": {
+      "assets": "./node_modules/figlet/fonts/Standard.flf"
+    },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Phoenix Learning Labs",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.2.2",
+    "line-reader": "^0.4.0"
+  }
+}
