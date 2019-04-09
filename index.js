@@ -72,7 +72,7 @@ function processOutText(answers){
           if(line.indexOf("ErrorID") > 0 ){
             console.log('---- Error');
             // Write a row out
-            csvLine = `\n${answers.runID},${answers.server},${answers.environment},${answers.runnerType},${timeIS},${beneID},${request}`
+            csvLine = `\n"${answers.runID}",${answers.server},${answers.environment},${answers.runnerType},"${timeIS}",${beneID},${request}`
             fs.appendFile(csvFile, csvLine, (err) => {
               if(err){
                 console.log(`***** Unable to append to "rout.csv"`)

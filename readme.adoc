@@ -177,5 +177,6 @@ NOTE: The PDF will not display the demo.
 .Document History
 |===
 | Date | Version | Author | Description
+| 03/09/19 | V2.1c | JHRS | Updated CSV for better import into MS Access
 | 03/08/19 | V2.1b | JHRS | initial version of utility with EXE's
 |===
