@@ -1,11 +1,11 @@
 = Runner Output to CSV Convertor
 John Schuster <John.schuster@PhoenixWorkgroup.com>
-v2.1b, 04/08/2019: Developer
+v2.1d, 04/10/2019: Developer
 :Author: John HR Schuster
 :Company:  Phoenix Workgroup
 :toc: left
 :toclevels: 4:
-:imagesdir: ./
+:imagesdir: ./images
 :pagenums:
 :chapter-label: 
 :experimental:
@@ -16,7 +16,7 @@ v2.1b, 04/08/2019: Developer
 :github: https://github.com/GeekMustHave/rout2csv.git
 :linkattrs:
 :seclinks:
-:title-logo-image: ./doco-cover.png
+:title-logo-image: ./images/doco-cover.png
 
 For doing automated testing of an API I have used a simple BASH script `runner.sh` that runs a CURL command for a number of requests against a list of beneficiaries.
 
@@ -165,11 +165,68 @@ This will generate an executable for Window, Mab and Linux
 
 == Demo
 
-The following is a demostration of the ROUT2CSV.
+The following is a demonstration of the ROUT2CSV.
 
 image::rout2csv.gif[Demo,align='center']
 
 NOTE: The PDF will not display the demo.
+
+<<<<
+== Full Cycle process
+
+The CSV output from this utility is imported into MSAccess to produce reports.
+
+Here is a full-cycle diagram of the entire testing and reporting process.
+
+.Testing cycle
+image::bash-runner-rout2csv-import-report.png[Testing cycle, align='center']
+ 
+
+There is a copy of the CC360-API-Issue database at this link:./CC360-API-Issue.accdb[ link,window='_blank']
+
+== Access Import
+
+The MS Access application for this process is named
+
+The CSV file generate by this utility will be imported to a MS Access application to generate the various reports.
+
+.Import Text File
+image::access-import-01.png[Import Text File, align='center']
+ 
+. New data source
+. From file
+. Text File
+
+.Select CSV file
+image::access-import-02.png[Select CSV file, align='center']
+ 
+. Append data to `RunnerResults` table
+. Browse and locate CSV files
+. Select the correct CSV file to import
+. Click kbd:[OK] to proceed
+
+.Delimited file
+image::access-import-05.png[Delimited file, align='center']
+ 
+. Just click on kbd:[Next >]
+
+.Configure Import
+image::access-import-06.png[Configure Import, align='center']
+ 
+This step is *Very Important*.
+It adjusts the `Run-Date` so it doesn't span 2 columns.
+
+. Check `First row contains field names` is checked on
+. Change text qualifier to quotes `"`
+. Click on kbd:[Next >]
+
+.Finalize import
+image::access-import-07.png[Finalize import, align='center']
+ 
+. Make sure table is `RunnerResults`
+. Click on kbd:[Finish]
+
+
 
 == Document History
 
@@ -177,6 +234,7 @@ NOTE: The PDF will not display the demo.
 .Document History
 |===
 | Date | Version | Author | Description
+| 03/10/19 | V2.1d | JHRS | Moved Access stuff under project
 | 03/09/19 | V2.1c | JHRS | Updated CSV for better import into MS Access
 | 03/08/19 | V2.1b | JHRS | initial version of utility with EXE's
 |===

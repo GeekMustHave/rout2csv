@@ -529,8 +529,8 @@ table.CodeRay td.code>pre{padding:0}
 <div class="details">
 <span id="author" class="author">John HR Schuster</span><br>
 <span id="email" class="email"><a href="mailto:John.schuster@PhoenixWorkgroup.com">John.schuster@PhoenixWorkgroup.com</a></span><br>
-<span id="revnumber">version 2.1b,</span>
-<span id="revdate">04/08/2019</span>
+<span id="revnumber">version 2.1d,</span>
+<span id="revdate">04/10/2019</span>
 <br><span id="revremark">Developer</span>
 </div>
 <div id="toc" class="toc2">
@@ -544,6 +544,8 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_logic">Logic</a></li>
 <li><a href="#_compiling_rout2csv">Compiling ROUT2CSV</a></li>
 <li><a href="#_demo">Demo</a></li>
+<li><a href="#_full_cycle_process">Full Cycle process</a></li>
+<li><a href="#_access_import">Access Import</a></li>
 <li><a href="#_document_history">Document History</a></li>
 </ul>
 </div>
@@ -837,11 +839,11 @@ If the callback returns false, reading will stop and the file will be closed.</p
 <h2 id="_demo">Demo</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following is a demostration of the ROUT2CSV.</p>
+<p>The following is a demonstration of the ROUT2CSV.</p>
 </div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="./rout2csv.gif" alt="Demo">
+<img src="./images/rout2csv.gif" alt="Demo">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -855,6 +857,131 @@ The PDF will not display the demo.
 </td>
 </tr>
 </table>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_full_cycle_process">Full Cycle process</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The CSV output from this utility is imported into MSAccess to produce reports.</p>
+</div>
+<div class="paragraph">
+<p>Here is a full-cycle diagram of the entire testing and reporting process.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./images/bash-runner-rout2csv-import-report.png" alt="Testing cycle">
+</div>
+<div class="title">Figure 1. Testing cycle</div>
+</div>
+<div class="paragraph">
+<p>There is a copy of the CC360-API-Issue database at this <a href="./CC360-API-Issue.accdb" target="_blank" rel="noopener">link</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_access_import">Access Import</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The MS Access application for this process is named</p>
+</div>
+<div class="paragraph">
+<p>The CSV file generate by this utility will be imported to a MS Access application to generate the various reports.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./images/access-import-01.png" alt="Import Text File">
+</div>
+<div class="title">Figure 2. Import Text File</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>New data source</p>
+</li>
+<li>
+<p>From file</p>
+</li>
+<li>
+<p>Text File</p>
+</li>
+</ol>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./images/access-import-02.png" alt="Select CSV file">
+</div>
+<div class="title">Figure 3. Select CSV file</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Append data to <code>RunnerResults</code> table</p>
+</li>
+<li>
+<p>Browse and locate CSV files</p>
+</li>
+<li>
+<p>Select the correct CSV file to import</p>
+</li>
+<li>
+<p>Click <kbd>OK</kbd> to proceed</p>
+</li>
+</ol>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./images/access-import-05.png" alt="Delimited file">
+</div>
+<div class="title">Figure 4. Delimited file</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Just click on <kbd>Next &gt;</kbd></p>
+</li>
+</ol>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./images/access-import-06.png" alt="Configure Import">
+</div>
+<div class="title">Figure 5. Configure Import</div>
+</div>
+<div class="paragraph">
+<p>This step is <strong>Very Important</strong>.
+It adjusts the <code>Run-Date</code> so it doesn&#8217;t span 2 columns.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check <code>First row contains field names</code> is checked on</p>
+</li>
+<li>
+<p>Change text qualifier to quotes <code>"</code></p>
+</li>
+<li>
+<p>Click on <kbd>Next &gt;</kbd></p>
+</li>
+</ol>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./images/access-import-07.png" alt="Finalize import">
+</div>
+<div class="title">Figure 6. Finalize import</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Make sure table is <code>RunnerResults</code></p>
+</li>
+<li>
+<p>Click on <kbd>Finish</kbd></p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -879,6 +1006,12 @@ The PDF will not display the demo.
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">03/10/19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V2.1d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JHRS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Moved Access stuff under project</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">03/09/19</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">V2.1c</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JHRS</p></td>
@@ -897,8 +1030,8 @@ The PDF will not display the demo.
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.1b<br>
-Last updated 2019-04-09 11:17:45 -0400
+Version 2.1d<br>
+Last updated 2019-04-10 13:11:06 -0400
 </div>
 </div>
 </body>

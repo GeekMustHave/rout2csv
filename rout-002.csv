@@ -1,0 +1,12 @@
+RunID,Server,Environment,RunnerType,Run-Date,Bene-ID,Request
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:00:28 PM",{125},edvisits
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:00:51 PM",{668},recentproviders
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:01:40 PM",{169},summary
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:01:59 PM",{005},summary
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:02:14 PM",{005},procedurecodes
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:02:36 PM",{835},summary
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:02:56 PM",{208},summary
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:03:09 PM",{208},recentproviders
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:03:37 PM",{320},summary
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:03:56 PM",{829},summary
+"002",UHC,QA,Concurrent,"Apr 08, 2019  3:04:11 PM",{829},procedurecodes
