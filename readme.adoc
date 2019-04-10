@@ -1,6 +1,6 @@
 = Runner Output to CSV Convertor
 John Schuster <John.schuster@PhoenixWorkgroup.com>
-v2.1d, 04/10/2019: Developer
+v2.1e, 04//2019: Developer
 :Author: John HR Schuster
 :Company:  Phoenix Workgroup
 :toc: left
@@ -131,9 +131,27 @@ If the callback returns false, reading will stop and the file will be closed.
 . Look for `ErrorID`
 . If found write a CSV row out
 
+<<<<
+
+== Application build
+
+If you want to modify this utility with Node then use Git to clone the repository into a new directory
+
+  git clone https://github.com/GeekMustHave/rout2csv.git
+
+Then have NPM rebuild all the dependant libraries.
+
+  npm install
+
+Edit the `index.js` file as required.
+
+Run the utility with `Node`
+
+  node index.js
+
 == Compiling ROUT2CSV
 
-The index.js can be compiled into an windows/linux/Mac OS executable by using `pkg'
+The Node.JS index.js can be compiled into an windows/linux/Mac OS executable by using `pkg'
 
 `pkg` This command line interface enables you to package your Node.js project into an executable that can be run even on devices without Node.js installed.
 
@@ -171,6 +189,11 @@ image::rout2csv.gif[Demo,align='center']
 
 NOTE: The PDF will not display the demo.
 
+
+
+
+
+
 <<<<
 == Full Cycle process
 
@@ -184,7 +207,7 @@ image::bash-runner-rout2csv-import-report.png[Testing cycle, align='center']
 
 There is a copy of the CC360-API-Issue database at this link:./CC360-API-Issue.accdb[ link,window='_blank']
 
-== Access Import
+=== Access Import
 
 The MS Access application for this process is named
 
@@ -216,8 +239,8 @@ image::access-import-06.png[Configure Import, align='center']
 This step is *Very Important*.
 It adjusts the `Run-Date` so it doesn't span 2 columns.
 
-. Check `First row contains field names` is checked on
 . Change text qualifier to quotes `"`
+. Check `First row contains field names` is checked on
 . Click on kbd:[Next >]
 
 .Finalize import
@@ -225,6 +248,20 @@ image::access-import-07.png[Finalize import, align='center']
  
 . Make sure table is `RunnerResults`
 . Click on kbd:[Finish]
+
+=== Access Reports
+
+==== Run-ID report
+
+This report shows all issues by run-date with run information.
+
+To see an example of this report click on this link:./CC360-API-RunDate-Report.pdf[ link,window='_blank']
+
+==== Run-Date Report
+
+This report shows each Run-ID with detail issue breakdown for Beneficiary-ID and Request.
+
+To see an example of this report click on this link:./CC360-API-RunID-Report.pdf[ link,window='_blank']
 
 
 
@@ -234,6 +271,7 @@ image::access-import-07.png[Finalize import, align='center']
 .Document History
 |===
 | Date | Version | Author | Description
+| 03/10/19 | V2.1e | JHRS | Updated reports to print local, included links
 | 03/10/19 | V2.1d | JHRS | Moved Access stuff under project
 | 03/09/19 | V2.1c | JHRS | Updated CSV for better import into MS Access
 | 03/08/19 | V2.1b | JHRS | initial version of utility with EXE's

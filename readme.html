@@ -529,8 +529,8 @@ table.CodeRay td.code>pre{padding:0}
 <div class="details">
 <span id="author" class="author">John HR Schuster</span><br>
 <span id="email" class="email"><a href="mailto:John.schuster@PhoenixWorkgroup.com">John.schuster@PhoenixWorkgroup.com</a></span><br>
-<span id="revnumber">version 2.1d,</span>
-<span id="revdate">04/10/2019</span>
+<span id="revnumber">version 2.1e,</span>
+<span id="revdate">04//2019</span>
 <br><span id="revremark">Developer</span>
 </div>
 <div id="toc" class="toc2">
@@ -542,10 +542,20 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_user_interface">User Interface</a></li>
 <li><a href="#_reading_files">Reading files</a></li>
 <li><a href="#_logic">Logic</a></li>
+<li><a href="#_application_build">Application build</a></li>
 <li><a href="#_compiling_rout2csv">Compiling ROUT2CSV</a></li>
 <li><a href="#_demo">Demo</a></li>
-<li><a href="#_full_cycle_process">Full Cycle process</a></li>
+<li><a href="#_full_cycle_process">Full Cycle process</a>
+<ul class="sectlevel2">
 <li><a href="#_access_import">Access Import</a></li>
+<li><a href="#_access_reports">Access Reports</a>
+<ul class="sectlevel3">
+<li><a href="#_run_id_report">Run-ID report</a></li>
+<li><a href="#_run_date_report">Run-Date Report</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#_document_history">Document History</a></li>
 </ul>
 </div>
@@ -775,13 +785,46 @@ If the callback returns false, reading will stop and the file will be closed.</p
 </li>
 </ol>
 </div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_application_build">Application build</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to modify this utility with Node then use Git to clone the repository into a new directory</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git clone https://github.com/GeekMustHave/rout2csv.git</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then have NPM rebuild all the dependant libraries.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>npm install</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Edit the <code>index.js</code> file as required.</p>
+</div>
+<div class="paragraph">
+<p>Run the utility with <code>Node</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>node index.js</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_compiling_rout2csv">Compiling ROUT2CSV</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The index.js can be compiled into an windows/linux/Mac OS executable by using `pkg'</p>
+<p>The Node.JS index.js can be compiled into an windows/linux/Mac OS executable by using `pkg'</p>
 </div>
 <div class="paragraph">
 <p><code>pkg</code> This command line interface enables you to package your Node.js project into an executable that can be run even on devices without Node.js installed.</p>
@@ -879,11 +922,8 @@ The PDF will not display the demo.
 <div class="paragraph">
 <p>There is a copy of the CC360-API-Issue database at this <a href="./CC360-API-Issue.accdb" target="_blank" rel="noopener">link</a></p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_access_import">Access Import</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_access_import">Access Import</h3>
 <div class="paragraph">
 <p>The MS Access application for this process is named</p>
 </div>
@@ -957,10 +997,10 @@ It adjusts the <code>Run-Date</code> so it doesn&#8217;t span 2 columns.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Check <code>First row contains field names</code> is checked on</p>
+<p>Change text qualifier to quotes <code>"</code></p>
 </li>
 <li>
-<p>Change text qualifier to quotes <code>"</code></p>
+<p>Check <code>First row contains field names</code> is checked on</p>
 </li>
 <li>
 <p>Click on <kbd>Next &gt;</kbd></p>
@@ -982,6 +1022,28 @@ It adjusts the <code>Run-Date</code> so it doesn&#8217;t span 2 columns.</p>
 <p>Click on <kbd>Finish</kbd></p>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_reports">Access Reports</h3>
+<div class="sect3">
+<h4 id="_run_id_report">Run-ID report</h4>
+<div class="paragraph">
+<p>This report shows all issues by run-date with run information.</p>
+</div>
+<div class="paragraph">
+<p>To see an example of this report click on this <a href="./CC360-API-RunDate-Report.pdf" target="_blank" rel="noopener">link</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_run_date_report">Run-Date Report</h4>
+<div class="paragraph">
+<p>This report shows each Run-ID with detail issue breakdown for Beneficiary-ID and Request.</p>
+</div>
+<div class="paragraph">
+<p>To see an example of this report click on this <a href="./CC360-API-RunID-Report.pdf" target="_blank" rel="noopener">link</a></p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1007,6 +1069,12 @@ It adjusts the <code>Run-Date</code> so it doesn&#8217;t span 2 columns.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">03/10/19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V2.1e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JHRS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updated reports to print local, included links</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">03/10/19</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">V2.1d</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JHRS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Moved Access stuff under project</p></td>
@@ -1030,8 +1098,8 @@ It adjusts the <code>Run-Date</code> so it doesn&#8217;t span 2 columns.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.1d<br>
-Last updated 2019-04-10 13:11:06 -0400
+Version 2.1e<br>
+Last updated 2019-04-10 14:52:48 -0400
 </div>
 </div>
 </body>
